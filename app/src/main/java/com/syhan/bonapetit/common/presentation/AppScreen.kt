@@ -9,8 +9,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.syhan.bonapetit.common.data.NavDestinations
-import com.syhan.bonapetit.feature_recipes.presentation.RecipeDetailsScreen
-import com.syhan.bonapetit.feature_recipes.presentation.RecipesScreen
+import com.syhan.bonapetit.feature_recipes.presentation.details.RecipeDetailsScreen
+import com.syhan.bonapetit.feature_recipes.presentation.recipes.RecipesScreen
 
 @Composable
 fun AppScreen(navController: NavHostController = rememberNavController()) {
