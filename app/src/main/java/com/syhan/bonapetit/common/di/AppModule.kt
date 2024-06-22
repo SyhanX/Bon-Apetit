@@ -1,5 +1,6 @@
 package com.syhan.bonapetit.common.di
 
+import androidx.lifecycle.SavedStateHandle
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.syhan.bonapetit.feature_recipes.data.remote.RecipeApi
 import com.syhan.bonapetit.feature_recipes.data.repository.RecipeRepositoryImpl
@@ -7,6 +8,7 @@ import com.syhan.bonapetit.feature_recipes.domain.repository.RecipeRepository
 import com.syhan.bonapetit.feature_recipes.domain.usecase.GetAllRecipes
 import com.syhan.bonapetit.feature_recipes.domain.usecase.GetRecipeById
 import com.syhan.bonapetit.feature_recipes.domain.usecase.RecipeUseCases
+import com.syhan.bonapetit.feature_recipes.presentation.details.RecipeDetailsViewModel
 import com.syhan.bonapetit.feature_recipes.presentation.recipes.RecipesViewModel
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -43,7 +45,7 @@ val appModule = module {
     viewModel {
         RecipesViewModel(get())
     }
-//    viewModel {
-//            (handle: SavedStateHandle) -> DetailsViewModel(get(), handle)
-//    }
+    viewModel {
+            (handle: SavedStateHandle) -> RecipeDetailsViewModel(get(), handle)
+    }
 }

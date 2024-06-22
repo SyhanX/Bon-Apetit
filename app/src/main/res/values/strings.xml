@@ -4,7 +4,32 @@
     <!-- Recipes -->
     <string name="time_minutes">%1$d minutes</string>
     <string name="servings_count">%1$d servings</string>
+
+    <!-- Unsorted -->
     <string name="loading">Loading</string>
     <string name="back">Go back</string>
-
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_unexpected">An unexpected error occurred</string>
+    <string name="action_settings">Settings</string>
+    <string name="recipe_image_description">This image shows a tasty dish</string>
+    <string name="cook_time_minutes">%1$s min</string>
+    <string name="action_retry">Retry</string>
+    <string name="recipes">Recipes</string>
+    <string name="details">Details</string>
+    <string name="rating">Rating</string>
+    <string name="meal_type">Meal type</string>
+    <string name="prep_time">Prep Time</string>
+    <string name="cook_time">Cook Time</string>
+    <string name="cuisine_lowercase">cuisine</string>
+    <string name="calories">Calories per serving</string>
+    <string name="servings">Servings</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="instructions">Instructions</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="tags">Tags</string>
+    <string name="reviews">%1$d Reviews</string>
+    <string name="total_time">Total Time</string>
+    <string name="calories_per_serving">%1$d kcal</string>
+    <string name="step_number">Step %1$d</string>
+    <string name="copy_text">Copy text</string>
 </resources>
