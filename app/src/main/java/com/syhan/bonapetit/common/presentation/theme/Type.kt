@@ -1,4 +1,4 @@
-package com.syhan.bonapetit.ui.theme
+package com.syhan.bonapetit.common.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.font.FontFamily

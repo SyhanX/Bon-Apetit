@@ -1,4 +1,4 @@
-package com.syhan.bonapetit.ui.theme
+package com.syhan.bonapetit.common.presentation.theme
 
 import android.app.Activity
 import android.os.Build

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bon Apetit</string>
+
+    <!-- Recipes -->
+    <string name="time_minutes">%1$d minutes</string>
+
+
 </resources>
