@@ -10,6 +10,6 @@ interface RecipeApi {
     @GET("recipes/{id}")
     suspend fun getRecipeById(@Path("id") id: Int): Response<FullRecipe?>
 
-    @GET("recipes?select=name,image,difficulty,cuisine,prepTimeMinutes,cookTimeMinutes")
+    @GET("recipes?select=name,image,servings,cuisine,prepTimeMinutes,cookTimeMinutes")
     suspend fun getAllRecipes() : Response<RecipeList>
 }

@@ -5,11 +5,11 @@ import com.syhan.bonapetit.common.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
-class RecipeBookApplication: Application() {
+class BonApetitApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            androidContext(this@RecipeBookApplication)
+            androidContext(this@BonApetitApplication)
             modules(appModule)
         }
     }

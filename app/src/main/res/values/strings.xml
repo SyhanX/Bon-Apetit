@@ -3,6 +3,8 @@
 
     <!-- Recipes -->
     <string name="time_minutes">%1$d minutes</string>
-
+    <string name="servings_count">%1$d servings</string>
+    <string name="loading">Loading</string>
+    <string name="back">Go back</string>
 
 </resources>

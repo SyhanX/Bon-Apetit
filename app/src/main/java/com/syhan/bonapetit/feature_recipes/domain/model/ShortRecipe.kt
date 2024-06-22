@@ -10,7 +10,7 @@ data class ShortRecipe( //for recipes screen
     val name: String,
     val prepTimeMinutes: Int,
     val cookTimeMinutes: Int,
-    val difficulty: String,
+    val servings: Int,
     val cuisine: String,
     val image: String,
 )

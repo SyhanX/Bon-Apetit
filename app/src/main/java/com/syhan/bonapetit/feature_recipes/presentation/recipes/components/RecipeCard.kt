@@ -42,7 +42,7 @@ import com.valentinilk.shimmer.shimmer
 fun RecipeCard(
     name: String,
     image: String = "",
-    difficulty: String,
+    servings: Int,
     cuisine: String,
     time: Int,
     onClick: () -> Unit = {},
@@ -52,7 +52,7 @@ fun RecipeCard(
             containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
         modifier = Modifier
-            .height(150.dp)
+            .height(160.dp)
             .fillMaxWidth()
             .clickable { onClick() }
     ) {
@@ -60,7 +60,7 @@ fun RecipeCard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .padding(start = 12.dp, top = 6.dp, bottom = 6.dp, end = 6.dp)
+                .padding(12.dp, 6.dp)
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
@@ -88,8 +88,8 @@ fun RecipeCard(
                 )
                 IconTextRow(
                     icon = R.drawable.ic_dish_hollow,
-                    description = difficulty,
-                    text = difficulty
+                    description = stringResource(R.string.servings_count, servings),
+                    text = stringResource(R.string.servings_count, servings)
                 )
             }
             Spacer(Modifier.width(8.dp))
@@ -139,7 +139,7 @@ private fun CardPreview() {
     BonApetitTheme {
         RecipeCard(
             name = "Bavarian Wurst",
-            difficulty = "4 servings",
+            servings = 4,
             cuisine = "Dutch",
             time = 30,
         )
@@ -153,8 +153,8 @@ private fun CardDarkPreview() {
         darkTheme = true
     ) {
         RecipeCard(
-            name = "Bavarian Wurst",
-            difficulty = "4 servings",
+            name = "Apfelluftwaffegesetz",
+            servings = 4,
             cuisine = "Dutch",
             time = 30,
         )
