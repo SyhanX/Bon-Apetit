@@ -1,7 +1,7 @@
 package com.syhan.bonapetit.feature_recipes.presentation.recipes.components
 
-import android.content.res.Configuration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -39,14 +40,17 @@ import com.valentinilk.shimmer.shimmer
 
 @Composable
 fun RecipeCard(
-    name: String = "",
+    name: String,
     image: String = "",
-    difficulty: String = "",
-    cuisine: String = "",
-    time: Int = 0,
+    difficulty: String,
+    cuisine: String,
+    time: Int,
     onClick: () -> Unit = {},
 ) {
     Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ),
         modifier = Modifier
             .height(150.dp)
             .fillMaxWidth()
@@ -56,7 +60,7 @@ fun RecipeCard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .padding(start = 8.dp, top = 6.dp, bottom = 6.dp, end = 6.dp)
+                .padding(start = 12.dp, top = 6.dp, bottom = 6.dp, end = 6.dp)
                 .fillMaxWidth()
                 .fillMaxHeight()
         ) {
@@ -69,22 +73,23 @@ fun RecipeCard(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.SemiBold,
                     maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
+                    overflow = TextOverflow.Ellipsis,
+                    color = MaterialTheme.colorScheme.onSecondaryContainer
                 )
                 IconTextRow(
-                    icon = R.drawable.ic_timer,
+                    icon = R.drawable.ic_globe,
+                    description = cuisine,
+                    text = cuisine
+                )
+                IconTextRow(
+                    icon = R.drawable.ic_time,
                     description = stringResource(R.string.time_minutes, time),
                     text = stringResource(R.string.time_minutes, time)
                 )
                 IconTextRow(
-                    icon = R.drawable.ic_question_mark,
+                    icon = R.drawable.ic_dish_hollow,
                     description = difficulty,
                     text = difficulty
-                )
-                IconTextRow(
-                    icon = R.drawable.ic_cuisine,
-                    description = cuisine,
-                    text = cuisine
                 )
             }
             Spacer(Modifier.width(8.dp))
@@ -108,6 +113,11 @@ fun RecipeImage(
             onLoading = { isLoading.value = true },
             onSuccess = { isLoading.value = false },
             modifier = Modifier
+                .border(
+                    width = 1.dp,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    shape = RoundedCornerShape(8.dp)
+                )
                 .clip(RoundedCornerShape(8.dp))
                 .size(130.dp)
         )
@@ -123,16 +133,28 @@ fun RecipeImage(
     }
 }
 
-@Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-    showSystemUi = false,
-)
+@Preview
 @Composable
 private fun CardPreview() {
     BonApetitTheme {
         RecipeCard(
             name = "Bavarian Wurst",
-            difficulty = "medium",
+            difficulty = "4 servings",
+            cuisine = "Dutch",
+            time = 30,
+        )
+    }
+}
+
+@Preview
+@Composable
+private fun CardDarkPreview() {
+    BonApetitTheme(
+        darkTheme = true
+    ) {
+        RecipeCard(
+            name = "Bavarian Wurst",
+            difficulty = "4 servings",
             cuisine = "Dutch",
             time = 30,
         )

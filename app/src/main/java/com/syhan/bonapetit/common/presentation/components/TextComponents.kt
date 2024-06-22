@@ -27,13 +27,14 @@ fun IconTextRow(
         Icon(
             painter = painterResource(icon),
             contentDescription = description,
-            tint = MaterialTheme.colorScheme.primary
+            tint = MaterialTheme.colorScheme.secondary
         )
         Spacer(Modifier.width(4.dp))
         Text(
             text = text,
             fontWeight = FontWeight.Medium,
             fontSize = 18.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
     }
 }
