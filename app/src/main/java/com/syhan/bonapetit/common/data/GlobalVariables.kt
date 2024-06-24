@@ -53,4 +53,5 @@ object GlobalVariables {
     const val ROUTE_RECIPES = "com.syhan.bonapetit.common.data.NavDestinations.Recipes"
     const val ROUTE_DETAILS =
         "com.syhan.bonapetit.common.data.NavDestinations.RecipeDetails/{recipeId}"
+    const val TAG = "debug_tag"
 }

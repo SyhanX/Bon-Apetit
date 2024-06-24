@@ -37,7 +37,7 @@ fun IconTextRow(
         Spacer(Modifier.width(4.dp))
         Text(
             text = text,
-            fontWeight = FontWeight.Medium,
+            fontWeight = FontWeight.SemiBold,
             fontSize = 18.sp,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )

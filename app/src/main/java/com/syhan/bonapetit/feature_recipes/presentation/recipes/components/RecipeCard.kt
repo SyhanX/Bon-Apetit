@@ -54,6 +54,11 @@ fun RecipeCard(
         modifier = Modifier
             .height(160.dp)
             .fillMaxWidth()
+            .border(
+                1.dp,
+                color = MaterialTheme.colorScheme.secondary,
+                shape = RoundedCornerShape(10.dp)
+            )
             .clickable { onClick() }
     ) {
         Row(
@@ -74,7 +79,6 @@ fun RecipeCard(
                     fontWeight = FontWeight.SemiBold,
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis,
-                    color = MaterialTheme.colorScheme.onSecondaryContainer
                 )
                 IconTextRow(
                     icon = R.drawable.ic_globe,
@@ -99,7 +103,7 @@ fun RecipeCard(
 }
 
 @Composable
-fun RecipeImage(
+private fun RecipeImage(
     name: String,
     image: String,
     modifier: Modifier = Modifier
@@ -138,7 +142,7 @@ fun RecipeImage(
 private fun CardPreview() {
     BonApetitTheme {
         RecipeCard(
-            name = "Bavarian Wurst",
+            name = "Apfelluftwaffegesetz",
             servings = 4,
             cuisine = "Dutch",
             time = 30,
