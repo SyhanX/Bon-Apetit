@@ -204,7 +204,7 @@ private fun OtherInformation(
     servings: Int,
     caloriesPerServing: Int
 ) {
-    CardWithSpacedItems() {
+    CardWithSpacedItems {
         Row(
             horizontalArrangement = Arrangement.spacedBy(64.dp),
         ) {

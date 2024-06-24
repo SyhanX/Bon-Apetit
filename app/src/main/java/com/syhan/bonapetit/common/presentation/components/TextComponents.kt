@@ -82,18 +82,6 @@ fun SemiboldText(
         color = MaterialTheme.colorScheme.onBackground
     )
 }
-
-@Composable
-fun SemiboldNormalTextRow(
-    boldText: String,
-    normalText: String,
-) {
-    Row {
-        SemiboldText(text = "$boldText: ")
-        NormalText(text = normalText)
-    }
-}
-
 @Composable
 fun SemiboldNormalTextColumn(
     boldText: String,
