@@ -34,7 +34,7 @@ class RecipesViewModel(
                 _networkResponse.value = NetworkResponse.Loading
                 useCases.getAllRecipes()
             } catch (e: IOException) {
-                _networkResponse.value = NetworkResponse.InternetConnectionError
+                _networkResponse.value = NetworkResponse.ConnectionError
                 return@launch
             } catch (e: HttpException) {
                 _networkResponse.value = NetworkResponse.UnexpectedError
