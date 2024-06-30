@@ -36,7 +36,9 @@ fun RecipesScreen(
 ) {
     val response = viewModel.networkResponse.collectAsStateWithLifecycle()
  
-    ManageInternetConnection(response = response.value, retryAction = { /*TODO*/ }) {
+    ManageInternetConnection(response = response.value, retryAction = {
+        viewModel.retryConnection(response.value)
+    }) {
         RecipesContent(
             recipes = viewModel.recipeListState.value.recipeList,
         ) { onNavigate(it) }

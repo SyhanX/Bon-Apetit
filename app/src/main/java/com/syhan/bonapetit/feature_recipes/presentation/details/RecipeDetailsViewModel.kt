@@ -70,4 +70,10 @@ class RecipeDetailsViewModel(
             }
         }
     }
+
+    fun retryConnection(response: NetworkResponse) {
+        if (response != NetworkResponse.Loading && arg != null) {
+            getSingleRecipe(arg)
+        }
+    }
 }

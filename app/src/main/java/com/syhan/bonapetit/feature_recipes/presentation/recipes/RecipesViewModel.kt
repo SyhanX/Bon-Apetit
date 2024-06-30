@@ -28,7 +28,6 @@ class RecipesViewModel(
     }
 
     private fun getAllRecipes() {
-
         viewModelScope.launch(Dispatchers.IO) {
             val response = try {
                 _networkResponse.value = NetworkResponse.Loading
@@ -57,6 +56,12 @@ class RecipesViewModel(
                     }
                 )
             }
+        }
+    }
+
+    fun retryConnection(response: NetworkResponse) {
+        if (response != NetworkResponse.Loading) {
+            getAllRecipes()
         }
     }
 }

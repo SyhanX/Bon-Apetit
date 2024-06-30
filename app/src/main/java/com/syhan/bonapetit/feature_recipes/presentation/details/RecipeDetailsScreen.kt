@@ -76,7 +76,9 @@ fun RecipeDetailsScreen(
         )
     }
 
-    ManageInternetConnection(response = response.value, retryAction = { /*TODO*/ }) {
+    ManageInternetConnection(response = response.value, retryAction = {
+        viewModel.retryConnection(response.value)
+    }) {
         DetailsContent(recipe = recipe) { onBackPressed() }
     }
 }
